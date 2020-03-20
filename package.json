@@ -1,0 +1,13 @@
+{
+  "name": "stl-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jesse Tomchak <jtomchak@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "nearley": "^2.19.1"
+  },
+  "scripts": {
+    "nc": "nearleyc"
+  }
+}
