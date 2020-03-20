@@ -18,6 +18,9 @@
 ```
 
 2. Parsing STL File
+  - Using [nearley](https://nearley.js.org/). The plan is to parse out the stl into a known shape, and then compute the required metrics from it. Then based on that possibily move some of those computes in th the 'post processing' phase of the parse. To be determined. 
+  - [nearley playground](http://omrelli.ug/nearley-playground/) super helpful
+  - learning enough grammer to understand what I'm doing with the grammer build. 
 
 3. Report Metrics from stl file
 

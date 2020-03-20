@@ -8,6 +8,8 @@
     "nearley": "^2.19.1"
   },
   "scripts": {
-    "nc": "nearleyc"
+    "nc": "nearleyc",
+    "compile:stl": "nearleyc src/stl.ne -o src/stl.js",
+    "stl": "node src/index.js"
   }
 }
