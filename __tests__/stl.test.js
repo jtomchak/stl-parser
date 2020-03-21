@@ -33,34 +33,78 @@ describe('STL Parse Single Sample', () => {
         ['simple', []],
         [
           [
-            null,
-            'facet ',
-            [null, 'normal', null],
-            0,
-            null,
-            0,
-            null,
-            0,
-            []
-          ]
-        ],
+            [
+              [
+                null,
+                'facet ',
+                [null, 'normal', null],
+                0,
+                null,
+                0,
+                null,
+                0,
+                []
+              ]
+            ],
+            [
+              [
+                [
+                  null,
+                  'outer loop',
+                  null,
+                  [],
+                  [
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                  ],
+                  [null, 'endloop', null, []]
+                ]
+              ]
+            ],
+            [null, 'endfacet', null, []]
+          ],
+          [['endsolid', null, ['simple', []]]]
+        ]
+      ],
+      [
+        'solid ',
+        ['simple', []],
         [
           [
             [
-              null,
-              'outer loop',
-              null,
-              [],
               [
-                [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                [null, 'vertex ', null, 0, null, 0, null, 0, []]
-              ],
-              [null, 'endloop', null, []]
-            ]
-          ]
-        ],
-        [null, 'endfacet', null, []]
+                null,
+                'facet ',
+                [null, 'normal', null],
+                0,
+                null,
+                0,
+                null,
+                0,
+                []
+              ]
+            ],
+            [
+              [
+                [
+                  null,
+                  'outer loop',
+                  null,
+                  [],
+                  [
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                  ],
+                  [null, 'endloop', null, []]
+                ]
+              ]
+            ],
+            [null, 'endfacet', null, []]
+          ],
+          [['endsolid', null, [' simple', []]]]
+        ]
       ]
     ]);
   })

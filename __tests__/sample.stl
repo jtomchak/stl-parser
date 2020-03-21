@@ -6,5 +6,4 @@ solid simple
           vertex 0 0 0
       endloop
   endfacet
-
-
+endsolid simple

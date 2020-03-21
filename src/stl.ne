@@ -24,9 +24,11 @@ var appendItemChar = function (a, b) { return function (d) { return d[a].concat(
 var empty = function (d) { return []; };
 var emptyStr = function (d) { return ""; };
 %}
-main -> "solid " name facet loop end_facet
-name -> string newline
-facet -> (_ "facet " facetType int _ int _ int newline)
+main -> "solid " name facet:+
+end_solid -> "endsolid" _ name
+name -> string newline | null
+facet -> start_facet loop end_facet | end_solid
+start_facet -> (_ "facet " facetType int _ int _ int newline)
 facetType -> _ "normal" _
 end_facet -> _ "endfacet" _ newline
 loop -> (_ "outer loop" _ newline vertex:+ end_loop):+
