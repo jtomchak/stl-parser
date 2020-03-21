@@ -103,10 +103,14 @@ var grammar = {
             );
         }
         },
-    {"name": "main$subexpression$1$string$1", "symbols": [{"literal":"s"}, {"literal":"o"}, {"literal":"l"}, {"literal":"i"}, {"literal":"d"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
-    {"name": "main$subexpression$1", "symbols": ["main$subexpression$1$string$1", "name"]},
-    {"name": "main", "symbols": ["main$subexpression$1"]},
+    {"name": "main$string$1", "symbols": [{"literal":"s"}, {"literal":"o"}, {"literal":"l"}, {"literal":"i"}, {"literal":"d"}, {"literal":" "}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "main", "symbols": ["main$string$1", "name", "facet"]},
     {"name": "name", "symbols": ["string", "newline"]},
+    {"name": "facet$subexpression$1$string$1", "symbols": [{"literal":"f"}, {"literal":"a"}, {"literal":"c"}, {"literal":"e"}, {"literal":"t"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "facet$subexpression$1", "symbols": ["_", "facet$subexpression$1$string$1", "facetType", "int", "_", "int", "_", "int"]},
+    {"name": "facet", "symbols": ["facet$subexpression$1"]},
+    {"name": "facetType$string$1", "symbols": [{"literal":"n"}, {"literal":"o"}, {"literal":"r"}, {"literal":"m"}, {"literal":"a"}, {"literal":"l"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "facetType", "symbols": ["_", "facetType$string$1", "_"]},
     {"name": "string", "symbols": [], "postprocess": emptyStr},
     {"name": "string", "symbols": ["string", /[^\n*]/], "postprocess": appendItem(0, 1)},
     {"name": "newline", "symbols": [{"literal":"\r"}, {"literal":"\n"}], "postprocess": empty},

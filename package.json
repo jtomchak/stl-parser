@@ -10,6 +10,7 @@
   "scripts": {
     "nc": "nearleyc",
     "compile:stl": "nearleyc src/stl.ne -o src/stl.js",
-    "stl": "node src/index.js"
+    "stl": "node src/index.js",
+    "test": "nearley-test -i $(<src/sample.stl) src/stl.js"
   }
 }

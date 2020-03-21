@@ -22,6 +22,10 @@
   - [nearley playground](http://omrelli.ug/nearley-playground/) super helpful
   - learning enough grammer to understand what I'm doing with the grammer build. 
 
+  1. PROCESS:
+      - `yarn compile:stl` will compile `stl.ne` grammer into JS
+      - `yarn stl` will execute 
+
 3. Report Metrics from stl file
 
   - [ ] The number of triangles in the model
