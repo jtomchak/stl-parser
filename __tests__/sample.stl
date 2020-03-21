@@ -5,3 +5,6 @@ solid simple
           vertex 0 0 0
           vertex 0 0 0
       endloop
+  endfacet
+
+

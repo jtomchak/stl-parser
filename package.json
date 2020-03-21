@@ -11,6 +11,16 @@
     "nc": "nearleyc",
     "compile:stl": "nearleyc src/stl.ne -o src/stl.js",
     "stl": "node src/index.js",
-    "test": "nearley-test -i $(<src/sample.stl) src/stl.js"
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.ne$": "jest-transform-nearley"
+    }
+  },
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "jest-transform-nearley": "^2.0.0"
   }
 }
