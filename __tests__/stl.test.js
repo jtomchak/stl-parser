@@ -111,9 +111,14 @@ describe('STL Parse Single Sample', () => {
     ]);
   })
 
-  test('stlName adds the name property and value to the meta details', () => {
-    let metaO = utils.stlName(parser.results)()
-    expect(metaO).toStrictEqual({ name: 'simple' })
+  test('stlName adds the name property and value to the solid details', () => {
+    let solid = utils.stlName(parser.results)()
+    expect(solid).toStrictEqual({ name: 'simple' })
+  })
+
+  test('stlTriangle calculates the number of triangles and adds it to solid details', () => {
+    let solid = utils.stlTriangle(parser.results)();
+    expect(solid).toStrictEqual({ num_triangles: 2 })
   })
 
 
