@@ -5,7 +5,7 @@ const stlName = pResults => (solidDetails = {}) => {
 }
 
 const stlTriangle = pResults => (solidDetails = {}) => {
-
+  solidDetails.num_triangles = pResults[1][2].length - 1 // end of array should be 'endsolid'
   return solidDetails;
 }
 

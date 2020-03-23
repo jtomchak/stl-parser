@@ -27,13 +27,45 @@ describe('STL Parse Single Sample', () => {
     expect(typeof content).toBe("string");
   })
 
-  test('stl grammer valid compile', () => {
+  test('stl grammer valid compile (snapshot)', () => {
     // console.log(util.inspect(parser.results, false, null, true /* enable colors */));
     expect(parser.results).toStrictEqual([
       [
         'solid ',
         ['simple', []],
         [
+          [
+            [
+              [
+                null,
+                'facet ',
+                [null, 'normal', null],
+                -0.1,
+                null,
+                0,
+                null,
+                0,
+                []
+              ]
+            ],
+            [
+              [
+                [
+                  null,
+                  'outer loop',
+                  null,
+                  [],
+                  [
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                  ],
+                  [null, 'endloop', null, []]
+                ]
+              ]
+            ],
+            [null, 'endfacet', null, []]
+          ],
           [
             [
               [
@@ -73,6 +105,38 @@ describe('STL Parse Single Sample', () => {
         'solid ',
         ['simple', []],
         [
+          [
+            [
+              [
+                null,
+                'facet ',
+                [null, 'normal', null],
+                -0.1,
+                null,
+                0,
+                null,
+                0,
+                []
+              ]
+            ],
+            [
+              [
+                [
+                  null,
+                  'outer loop',
+                  null,
+                  [],
+                  [
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
+                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                  ],
+                  [null, 'endloop', null, []]
+                ]
+              ]
+            ],
+            [null, 'endfacet', null, []]
+          ],
           [
             [
               [
