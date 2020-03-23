@@ -26,7 +26,7 @@ var emptyStr = function (d) { return ""; };
 %}
 main -> "solid " name facet:+
 end_solid -> "endsolid" _ name
-name -> string newline | null
+name -> string  newline:?
 facet -> start_facet loop end_facet | end_solid
 start_facet -> (_ "facet " facetType decimal _ decimal _ decimal newline)
 facetType -> _ "normal" _
