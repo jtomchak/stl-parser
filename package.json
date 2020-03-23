@@ -5,6 +5,7 @@
   "author": "Jesse Tomchak <jtomchak@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "mathjs": "^6.6.1",
     "nearley": "^2.19.1"
   },
   "scripts": {

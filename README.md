@@ -28,9 +28,19 @@
 
 3. Report Metrics from stl file
 
-  - [ ] The number of triangles in the model
+  - [x] The number of triangles in the model
   - [ ] The surface area of the model
   - [ ] The bounding box of the model (the 8 points defining a cube (or 3D rectangle) with smallest volume that completely contains the shape), see: https://en.wikipedia.org/wiki/Minimum_bounding_box
+
+  - [vector or cross](http://math.ucsd.edu/~lni/math20e/l2.pdf)
+    - possible solution to surface area
+      > Get your surface ready (i am assuming an stl file or 3 arrays) and then compute:
+      C = cross(A2-A1,A3-A1,2);
+      A = 1/2*sum(sqrt(sum(C.^2,2))); % A is the total area
+      This adds up all the vertices and should work.
+
+    - get mathjs for cross function
+    - [calc surface area of a 3d mesh](https://stackoverflow.com/questions/26312570/calculate-surface-area-of-a-3d-mesh)
 
 ```js
 // sample output

@@ -40,11 +40,11 @@ describe('STL Parse Single Sample', () => {
                 null,
                 'facet ',
                 [null, 'normal', null],
-                -0.1,
+                -0.785875,
                 null,
                 0,
                 null,
-                0,
+                -0.618385,
                 []
               ]
             ],
@@ -56,9 +56,31 @@ describe('STL Parse Single Sample', () => {
                   null,
                   [],
                   [
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                    [
+                      null, 'vertex ',
+                      null, 0.360463,
+                      null, 0,
+                      null, 2.525,
+                      []
+                    ],
+                    [
+                      null,
+                      'vertex ',
+                      null,
+                      0,
+                      null,
+                      0,
+                      null,
+                      2.98309,
+                      []
+                    ],
+                    [
+                      null, 'vertex ',
+                      null, 0.360463,
+                      null, 0.2,
+                      null, 2.525,
+                      []
+                    ]
                   ],
                   [null, 'endloop', null, []]
                 ]
@@ -72,11 +94,11 @@ describe('STL Parse Single Sample', () => {
                 null,
                 'facet ',
                 [null, 'normal', null],
-                -0.1,
+                -0.785875,
                 null,
                 0,
                 null,
-                0,
+                -0.618385,
                 []
               ]
             ],
@@ -88,9 +110,31 @@ describe('STL Parse Single Sample', () => {
                   null,
                   [],
                   [
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                    [
+                      null,
+                      'vertex ',
+                      null,
+                      0,
+                      null,
+                      0,
+                      null,
+                      2.98309,
+                      []
+                    ],
+                    [
+                      null, 'vertex ',
+                      null, 0,
+                      null, 0.2,
+                      null, 2.98309,
+                      []
+                    ],
+                    [
+                      null, 'vertex ',
+                      null, 0.360463,
+                      null, 0.2,
+                      null, 2.525,
+                      []
+                    ]
                   ],
                   [null, 'endloop', null, []]
                 ]
@@ -111,11 +155,11 @@ describe('STL Parse Single Sample', () => {
                 null,
                 'facet ',
                 [null, 'normal', null],
-                -0.1,
+                -0.785875,
                 null,
                 0,
                 null,
-                0,
+                -0.618385,
                 []
               ]
             ],
@@ -127,9 +171,31 @@ describe('STL Parse Single Sample', () => {
                   null,
                   [],
                   [
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                    [
+                      null, 'vertex ',
+                      null, 0.360463,
+                      null, 0,
+                      null, 2.525,
+                      []
+                    ],
+                    [
+                      null,
+                      'vertex ',
+                      null,
+                      0,
+                      null,
+                      0,
+                      null,
+                      2.98309,
+                      []
+                    ],
+                    [
+                      null, 'vertex ',
+                      null, 0.360463,
+                      null, 0.2,
+                      null, 2.525,
+                      []
+                    ]
                   ],
                   [null, 'endloop', null, []]
                 ]
@@ -143,11 +209,11 @@ describe('STL Parse Single Sample', () => {
                 null,
                 'facet ',
                 [null, 'normal', null],
-                -0.1,
+                -0.785875,
                 null,
                 0,
                 null,
-                0,
+                -0.618385,
                 []
               ]
             ],
@@ -159,9 +225,31 @@ describe('STL Parse Single Sample', () => {
                   null,
                   [],
                   [
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []],
-                    [null, 'vertex ', null, 0, null, 0, null, 0, []]
+                    [
+                      null,
+                      'vertex ',
+                      null,
+                      0,
+                      null,
+                      0,
+                      null,
+                      2.98309,
+                      []
+                    ],
+                    [
+                      null, 'vertex ',
+                      null, 0,
+                      null, 0.2,
+                      null, 2.98309,
+                      []
+                    ],
+                    [
+                      null, 'vertex ',
+                      null, 0.360463,
+                      null, 0.2,
+                      null, 2.525,
+                      []
+                    ]
                   ],
                   [null, 'endloop', null, []]
                 ]
@@ -183,6 +271,11 @@ describe('STL Parse Single Sample', () => {
   test('stlTriangle calculates the number of triangles and adds it to solid details', () => {
     let solid = utils.stlTriangle(parser.results)();
     expect(solid).toStrictEqual({ num_triangles: 2 })
+  })
+
+  test('stlSurfaceArea calculates the surface area of a given model', () => {
+    let area = utils.stlSurfaceArea(parser.results)();
+    expect(area).toEqual(0.11658130595751617);
   })
 
 
