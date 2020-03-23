@@ -7,9 +7,15 @@ const dirPath = path.join(__dirname);
 const nearley = require("nearley");
 const stl_grammar = require("../src/stl.ne")
 
+const utils = require("../src/utils")
+
 
 describe('STL Parse Single Sample', () => {
   let content = fs.readFileSync(path.join(dirPath, "./sample.stl"), 'utf8');
+  // Create a Parser object from our grammar.
+  const parser = new nearley.Parser(nearley.Grammar.fromCompiled(stl_grammar));
+  // Feed sample content 
+  parser.feed(content);
 
   beforeEach(() => {
     // Set up some mocked out file info before each test
@@ -22,11 +28,7 @@ describe('STL Parse Single Sample', () => {
   })
 
   test('stl grammer valid compile', () => {
-    // Create a Parser object from our grammar.
-    const parser = new nearley.Parser(nearley.Grammar.fromCompiled(stl_grammar));
-    // Feed sample content 
-    parser.feed(content);
-    console.log(util.inspect(parser.results, false, null, true /* enable colors */));
+    // console.log(util.inspect(parser.results, false, null, true /* enable colors */));
     expect(parser.results).toStrictEqual([
       [
         'solid ',
@@ -38,7 +40,7 @@ describe('STL Parse Single Sample', () => {
                 null,
                 'facet ',
                 [null, 'normal', null],
-                0,
+                -0.1,
                 null,
                 0,
                 null,
@@ -77,7 +79,7 @@ describe('STL Parse Single Sample', () => {
                 null,
                 'facet ',
                 [null, 'normal', null],
-                0,
+                -0.1,
                 null,
                 0,
                 null,
@@ -108,4 +110,11 @@ describe('STL Parse Single Sample', () => {
       ]
     ]);
   })
+
+  test('stlName adds the name property and value to the meta details', () => {
+    let metaO = utils.stlName(parser.results)()
+    expect(metaO).toStrictEqual({ name: 'simple' })
+  })
+
+
 });

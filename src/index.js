@@ -22,7 +22,6 @@ const sampleSTL = async () => {
   }
 }
 
-// Parse something!
-sampleSTL();
+
 
 // parser.results is an array of possible parsings.

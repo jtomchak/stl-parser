@@ -28,13 +28,19 @@ main -> "solid " name facet:+
 end_solid -> "endsolid" _ name
 name -> string newline | null
 facet -> start_facet loop end_facet | end_solid
-start_facet -> (_ "facet " facetType int _ int _ int newline)
+start_facet -> (_ "facet " facetType decimal _ decimal _ decimal newline)
 facetType -> _ "normal" _
 end_facet -> _ "endfacet" _ newline
 loop -> (_ "outer loop" _ newline vertex:+ end_loop):+
-vertex -> _ "vertex " _ int _ int _ int newline
+vertex -> _ "vertex " _ decimal _ decimal _ decimal newline
 end_loop -> _ "endloop" _ newline
 
+
+# decimals
+float ->
+      int "." int   {% function(d) {return {v:parseFloat(d[0].v + d[1] + d[2].v)}} %}
+    | int           {% function(d) {return {v:parseInt(d[0].v)}} %}
+# string helpers
 string   -> null      	{% emptyStr %}
 | string [^\n*]      	{% appendItem(0, 1) %}
 newline -> "\r" "\n"	{% empty %}
