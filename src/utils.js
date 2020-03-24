@@ -56,11 +56,13 @@ const stlSurfaceArea = pResults => (solidDetails = {}) => {
   // normalize / format facet into a tuple of tuples
   let vertexs = compose(normalizeVertexs, normalizeFacets)(pResults)
   const area = vertexs.reduce((areaTotal, verts) => (areaTotal + areaOfTriangle(verts)), 0)
-  return area;
+  solidDetails.surface_area = area;
+  return solidDetails;
 }
 
 
 module.exports = {
+  compose,
   stlName,
   stlTriangle,
   stlSurfaceArea

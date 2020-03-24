@@ -40,7 +40,7 @@ describe('STL Parse Single Sample', () => {
 
   test('stlSurfaceArea calculates the surface area of a given model', () => {
     let area = utils.stlSurfaceArea(parser.results)();
-    expect(area).toEqual(7.772634278919949);
+    expect(area).toStrictEqual({ "surface_area": 7.772634278919949 });
   })
 
 
