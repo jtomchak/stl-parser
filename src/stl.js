@@ -50,6 +50,8 @@ var grammar = {
     {"name": "newline", "symbols": [{"literal":"\r"}, {"literal":"\n"}], "postprocess": empty},
     {"name": "newline", "symbols": [{"literal":"\r"}]},
     {"name": "newline", "symbols": [{"literal":"\n"}], "postprocess": empty},
+    {"name": "newline$string$1", "symbols": [{"literal":"\r"}, {"literal":"\n"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "newline", "symbols": ["newline$string$1"], "postprocess": empty},
     {"name": "float", "symbols": ["int", {"literal":"."}, "int"], "postprocess": function(d) {return {v:parseFloat(d[0].v + d[1] + d[2].v)}}},
     {"name": "float", "symbols": ["int"], "postprocess": function(d) {return {v:parseInt(d[0].v)}}},
     {"name": "int$ebnf$1$subexpression$1", "symbols": [{"literal":"-"}]},

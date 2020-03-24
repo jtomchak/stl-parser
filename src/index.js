@@ -11,7 +11,7 @@ const utils = require("../src/utils")
 
 // Create a Parser object from our grammar.
 const parser = new nearley.Parser(nearley.Grammar.fromCompiled(stl));
-const content = fs.readFileSync('./src/Moon.stl', 'utf8')
+const content = fs.readFileSync('./src/sample_moon.stl', 'utf8')
 console.log(util.inspect(content, false, null, true /* enable colors */));
 
 parser.feed(content);
