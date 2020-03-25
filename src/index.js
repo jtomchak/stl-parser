@@ -20,8 +20,10 @@ const getContent = (stlFile = DEFAULT_FILE) => fs.readFileSync(stlFile, 'utf8').
 parser.feed(getContent());
 
 
+// calulate 
+let solid = compose(stlBoundingBox(parser.results), stlSurfaceArea(parser.results), stlTriangle(parser.results), stlName(parser.results))()
 
-let solid = compose(stlBoundingBox(parser.results), stlSurfaceArea(parser.results), stlTriangle(parser.results), stlName(parser.results))({})
+//output results
 console.log(util.inspect(solid, false, null, true /* enable colors */));
 
 
