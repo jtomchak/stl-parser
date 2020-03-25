@@ -89,6 +89,13 @@ Bounding Box: {x: 0, y: 0, z: 0 }, {x: 1, y: 1, z: 1 } ...
 
 4. Performace and improvments
 
+  1. Clean up amgibuious parsing in grammar.
+  2. Move the 'normalization' fuctions into grammar Postprocessing. 
+    - doing it a couple times
+    - it's fairly brittle
+  3. Add `nearley-generate` to testing
+    - randomly generate .stl based on grammar. Then execute test suit on it.
+
 5. Carriage Return Errors
 
 - quick solution is to string replace remove the `\r` using JS before parsing out the stl file with grammar. 
