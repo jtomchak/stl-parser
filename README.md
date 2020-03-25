@@ -30,7 +30,7 @@
 
   - [x] The number of triangles in the model
   - [x] The surface area of the model
-  - [ ] The bounding box of the model (the 8 points defining a cube (or 3D rectangle) with smallest volume that completely contains the shape), see: https://en.wikipedia.org/wiki/Minimum_bounding_box
+  - [x] The bounding box of the model (the 8 points defining a cube (or 3D rectangle) with smallest volume that completely contains the shape), see: https://en.wikipedia.org/wiki/Minimum_bounding_box
 
   - [vector or cross](http://math.ucsd.edu/~lni/math20e/l2.pdf)
     - possible solution to surface area
@@ -45,7 +45,7 @@
     - The current fastest 3D bounding cuboid algorithm is by [O'Rourke, 1985], which runs in O(n3) time, has several special cases, and is considerably more difficult to implement. O’Rourke’s algoruthm is based on his observation that “A box of minimal volume circumscribing a convex polyhedron must have at least two adjacent faces that contain edges of the polyhedron.” No faster exact algorithm has been found.
 
     - [bounding box](http://geomalgorithms.com/a08-_containers.html)
-    
+
 
 ```js
 // sample output
