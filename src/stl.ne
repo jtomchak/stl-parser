@@ -30,10 +30,10 @@ name -> string  newline:?
 facet -> start_facet loop end_facet | end_solid
 start_facet -> (_ "facet " facetType decimal _ decimal _ decimal newline)
 facetType -> _ "normal" _
-end_facet -> _ "endfacet" _ newline
+end_facet -> _ "endfacet" newline
 loop -> (_ "outer loop" _ newline vertex:+ end_loop):+
 vertex -> _ "vertex " _ decimal _ decimal _ decimal newline
-end_loop -> _ "endloop" _ newline
+end_loop -> _ "endloop" newline
 
 
 # decimals
@@ -43,5 +43,5 @@ float ->
 # string helpers
 string   -> null      	{% emptyStr %}
 | string [^\n*]      	{% appendItem(0, 1) %}
-newline -> "\r" "\n"	{% empty %}
+newline -> "\r\n"	{% empty %}
 | "\r" | "\n"       	{% empty %}

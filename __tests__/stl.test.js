@@ -12,7 +12,8 @@ const utils = require("../src/utils")
 
 describe('STL Parse Single Sample', () => {
   // let content = fs.readFileSync("./__tests__/sample.stl", 'utf8');
-  let content = fs.readFileSync("./__tests__/sample_moon.stl", 'utf8');
+  let content = fs.readFileSync("./__tests__/Moon.stl", 'utf8').replace(/[\r]+/gm, "");
+  // console.log(util.inspect(content, false, null, true /* enable colors */));
   // Create a Parser object from our grammar.
   const parser = new nearley.Parser(nearley.Grammar.fromCompiled(stl_grammar));
   // Feed sample content 
