@@ -3,7 +3,7 @@ const util = require("util")
 const nearley = require("nearley");
 
 const stl = require("./stl.js");
-const { compose, stlName, stlTriangle, stlSurfaceArea } = require("../src/utils")
+const { compose, stlName, stlTriangle, stlSurfaceArea, stlBoundingBox } = require("../src/utils")
 
 const DEFAULT_FILE = './src/Moon.stl';
 
@@ -21,7 +21,7 @@ parser.feed(getContent());
 
 
 
-let solid = compose(stlSurfaceArea(parser.results), stlTriangle(parser.results), stlName(parser.results))({})
+let solid = compose(stlBoundingBox(parser.results), stlSurfaceArea(parser.results), stlTriangle(parser.results), stlName(parser.results))({})
 console.log(util.inspect(solid, false, null, true /* enable colors */));
 
 

@@ -44,5 +44,10 @@ describe('STL Parse Single Sample', () => {
     expect(area).toStrictEqual({ "surface_area": 7.772634278919949 });
   })
 
+  test('stlBoundingBox calculates the 8 points of a minimum bounding box for a given model', () => {
+    let { bounding_box } = utils.stlBoundingBox(parser.results)();
+    expect(bounding_box.length).toBe(8);
+    expect(bounding_box[7]).toStrictEqual({ "x": 1.62841, "y": 0.35, "z": 3 })
+  })
 
 });
