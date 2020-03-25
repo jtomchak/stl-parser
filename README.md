@@ -53,7 +53,10 @@ Bounding Box: {x: 0, y: 0, z: 0 }, {x: 1, y: 1, z: 1 } ...
 
 4. Performace and improvments
 
-5. Carage Return 
+5. Carriage Return Errors
+
+- quick solution is to string replace remove the `\r` using JS before parsing out the stl file with grammar. 
+- long term is to work out the grammar parsing so that quick solution can be depreciated. doable with more time.
 
 ```sh
       '  endfacet\n  facet normal 0.752641 0.316228 0.577522\n   outer loop\n    ' +
