@@ -1,5 +1,38 @@
 # STL Parsing
 
+1. clone project `git clone https://github.com/jtomchak/stl-parser.git && cd stl-parser`
+1. install dependencies `yarn` or `npm i`
+1. calculate and return results for Moon.stl `yarn stl` or `npm run stl`
+
+Output should resemble:
+
+```bash
+ MB:stl-challenge> yarn stl
+yarn run v1.21.1
+$ node src/index.js
+{
+  name: 'Moon',
+  num_triangles: 116,
+  surface_area: 7.772634278919949,
+  bounding_box: [
+    { x: 0, y: 0, z: 0 },
+    { x: 1.62841, y: 0, z: 0 },
+    { x: 1.62841, y: 0, z: 3 },
+    { x: 0, y: 0, z: 3 },
+    { x: 0, y: 0.35, z: 0 },
+    { x: 1.62841, y: 0.35, z: 0 },
+    { x: 0, y: 0.35, z: 3 },
+    { x: 1.62841, y: 0.35, z: 3 }
+  ]
+}
+```
+
+---
+
+1. verify tests `yarn test` or `npm t`
+1. rebuild `stl.ne` grammar `yarn compile:stl` or `npm run compile:stl`
+
+
 ## Background
 
 1. [STL information](https://en.wikipedia.org/wiki/STL_(file_format))
